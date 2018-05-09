@@ -1,0 +1,29 @@
+﻿using System.Linq;
+using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace RolesDemo.Models
+{
+    public class ChatMessageDetails
+    {
+        public ChatMessageDetails()
+        {
+
+        }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+
+        public int ID { get; set; }
+
+        [Column(TypeName = "nvarchar")]
+        public string UserName { get; set; }
+
+        [Column(TypeName = "nvarchar")]
+        public string EmailID { get; set; }
+
+        [Column(TypeName = "nvarchar(MAX)")]
+        public string Message { get; set; }
+    }
+}
